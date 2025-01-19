@@ -368,8 +368,7 @@ public class Drive extends SubsystemBase {
     };
   }
 
-  /*   MegaTag Implementation, I (Don't) have this commented out so it doesn't error while I work on pathplanner,
-      to fix this I just need to know how I can access our angular rate as a double. (See bottom)
+  /*   MegaTag Implementation, to fix this I just need to know how I can access our angular rate as a double. (See line 409)
   -Aiden Tat */
 
   boolean useMegaTag2 = true; // set to false to use MegaTag1
@@ -406,10 +405,12 @@ public class Drive extends SubsystemBase {
           0);
       LimelightHelpers.PoseEstimate mt2 =
           LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight");
-      /*if(Math.abs(getAngularVelocity()) > 720) // if our angular velocity is greater than 720 degrees per second, ignore vision updates
+      /*
+      if(Math.abs(Boris Please put the current angular velocity here -Aiden) > 720) // if our angular velocity is greater than 720 degrees per second, ignore vision updates
       {
         doRejectUpdate = true;
-      }*/
+      }
+      */
       if (mt2.tagCount == 0) {
         doRejectUpdate = true;
       }
